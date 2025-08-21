@@ -56,18 +56,18 @@ export default function HomeSection() {
                 <div className="space-y-10 text-white/90 text-lg leading-relaxed flex flex-row gap-10 items-start justify-start">
                  
 
-                  <div className="flex flex-col gap-4 text-center justify-center items-center p-8 rounded-lg">
+                  <div className="flex flex-col gap-4 text-center justify-center items-center p-8 pt-2 rounded-lg">
                     <h2 className="text-3xl font-bold text-white mb-6 uppercase tracking-wider">
                       Welcome to the future of football
                     </h2>
                     <div className="flex flex-col gap-6 max-w-xl w-full">
-                      <p className="tracking-wide">
+                      <p className="tracking-wide text-base">
                         Overgoal is a narrative-driven, on-chain football RPG
                         built on Starknet and Dojo. Guide your Legend through a
                         career filled with choices, matches, and high-stakes
                         decisions—all shaped by real player-driven data.
                       </p>
-                      <p className="tracking-wide">
+                      <p className="tracking-wide text-base">
                         Experience skill-based progression, transparent
                         economics, and true community governance in a
                         persistent, evolving world where every decision matters
@@ -94,8 +94,8 @@ export default function HomeSection() {
                         <Image
                           src="/cart.png"
                           alt="cart"
-                          width={50}
-                          height={50}
+                          width={60}
+                          height={60}
                           className="object-contain"
                         />
                       </div>

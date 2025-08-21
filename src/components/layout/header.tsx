@@ -5,7 +5,7 @@ import { Button } from '../ui/button'
 
 export default function Header() {
   return (
-    <header className="z-100 max-w-screen-md w-full h-32 flex items-center justify-center mt-8 border-t border-white/10 py-8 sticky top-0  backdrop-blur-lg">
+    <header className="z-100 max-w-screen-lg w-full h-32 flex items-center justify-center mt-8 border-t border-white/10 py-8 sticky top-0  backdrop-blur-lg">
         <div className="z-100 w-full flex flex-col items-center justify-center gap-8 max-w-md ">
           <nav className=" flex flex-row items-center justify-center rounded-lg p-4 gap-8">
             <Link
