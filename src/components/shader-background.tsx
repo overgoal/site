@@ -1,6 +1,6 @@
 'use client'
-import React, { useEffect, useRef } from 'react'
-import { DotGrid, GrainGradient, MeshGradient, Warp, DotOrbit, Spiral, Dithering   } from '@paper-design/shaders-react'
+import React from 'react'
+import { DotGrid, GrainGradient   } from '@paper-design/shaders-react'
 
 interface ShaderBackgroundProps {
     children: React.ReactNode

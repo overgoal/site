@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Chakra_Petch, Orbitron } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/layout/header";
 import ShaderBackground from "@/components/shader-background";
 import localFont from "next/font/local";
 
@@ -46,11 +45,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${chakra.variable} ${orbitron.variable} ${airStrike.variable} ${airStrikeBold.variable}  antialiased`}>
-        <ShaderBackground>
-          {/* <Header /> */}
-            {children}
-        </ShaderBackground>
+      <body
+        className={`${chakra.variable} ${orbitron.variable} ${airStrike.variable} ${airStrikeBold.variable}  antialiased`}
+      >
+        <ShaderBackground>{children}</ShaderBackground>
       </body>
     </html>
   );
