@@ -2,19 +2,19 @@
 
 :root {
   /* Overgoal design tokens */
-  --bg-base: #0B0F1A;
+  --bg-base: #0b0f1a;
   --bg-surface: #121828;
-  --text-main: #E4E8F1;
-  --text-muted: #8890A4;
+  --text-main: #e4e8f1;
+  --text-muted: #8890a4;
 
-  --primary: #24CFE6;
-  --primary-hover: #37E3FA;
-  --secondary: #A16EFF;
-  --accent: #FF7A45;
+  --primary: #24cfe6;
+  --primary-hover: #37e3fa;
+  --secondary: #a16eff;
+  --accent: #ff7a45;
 
-  --success: #45E588;
-  --danger: #F4476B;
-  --highlight: #1C2D50;
+  --success: #45e588;
+  --danger: #f4476b;
+  --highlight: #1c2d50;
 
   /* Back-compat variables used in styles below */
   --background: var(--bg-base);
@@ -39,7 +39,8 @@
   --color-border: var(--highlight);
 
   --font-sans: var(--font-chakra);
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -51,7 +52,7 @@
 }
 
 .font-chakra {
-  font-family: var(--font-chakra);  
+  font-family: var(--font-chakra);
 }
 
 .font-orbitron {
@@ -66,15 +67,58 @@
   font-family: var(--font-air-strike-bold);
 }
 
-
-
-
 html {
   scroll-behavior: smooth;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-chakra), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  font-family: var(--font-chakra), ui-sans-serif, system-ui, -apple-system,
+    Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+@layer components {
+  .cyberpunk-clip {
+    clip-path: polygon(
+      0 0,
+      calc(100% - 20px) 0,
+      100% 20px,
+      100% 100%,
+      20px 100%,
+      0 calc(100% - 20px)
+    );
+  }
+
+  .cyberpunk-clip:hover {
+    clip-path: polygon(
+      0 0,
+      calc(100% - 15px) 0,
+      100% 15px,
+      100% 100%,
+      15px 100%,
+      0 calc(100% - 15px)
+    );
+  }
+
+  /* Cyberpunk glow animations */
+  @keyframes cyber-glow {
+    0%,
+    100% {
+      box-shadow: 0 0 20px currentColor;
+    }
+    50% {
+      box-shadow: 0 0 40px currentColor, 0 0 60px currentColor;
+    }
+  }
+
+  .cyber-glow {
+    animation: cyber-glow 2s ease-in-out infinite;
+  }
 }
