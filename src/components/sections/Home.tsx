@@ -2,15 +2,21 @@
 import Image from "next/image";
 import React, { useRef } from "react";
 import BackgroundBlur from "../BackgroundBlur";
-import Header from "../layout/header";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+import { SplitText } from "gsap/SplitText";
+import { useGSAP } from "@gsap/react";
+import GameSection from "./GameSection";
+
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 export default function HomeSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
-
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const bannerRef = useRef<HTMLSpanElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const overviewRef = useRef<HTMLDivElement>(null);
   // useEffect(() => {
   //   ScrollTrigger.create({
   //     trigger: sectionRef.current,
@@ -22,94 +28,112 @@ export default function HomeSection() {
   //   });
   // }, []);
 
+  useGSAP(() => {
+    if (
+      !titleRef.current ||
+      !bannerRef.current ||
+      !overviewRef.current ||
+      !headerRef.current
+    )
+      return;
+    const overviewTexts = overviewRef.current.querySelectorAll("p");
+    const headerItems = headerRef.current.querySelectorAll(".item");
+
+    gsap.set(headerItems, {
+      y: 10,
+      opacity: 0,
+    });
+
+    console.log(headerItems);
+    const tl = gsap.timeline();
+    const chars = new SplitText(titleRef.current, {
+      type: "chars",
+    });
+
+    tl.from(bannerRef.current, {
+      duration: 0.5,
+      y: 100,
+      opacity: 0,
+      ease: "power2.inOut",
+    });
+
+    tl.from(
+      chars.chars,
+      {
+        // rotationX: -90,
+        duration: 1,
+        y: -50,
+        opacity: 0,
+        ease: "power2.inOut",
+        stagger: 0.05,
+      },
+      "<"
+    );
+
+    tl.to(headerItems, {
+      duration: 0.5,
+      y: 0,
+      opacity: 1,
+      ease: "power2.inOut",
+      stagger: 0.05,
+    });
+
+    tl.from(overviewTexts, {
+      duration: 1,
+      y: 100,
+      opacity: 0,
+      ease: "power2.inOut",
+    });
+  });
+
   return (
     <section
       id="home"
       className="w-full h-full flex items-center flex-col justify-start relative "
     >
       <BackgroundBlur />
-      <div className="relative w-full h-12  flex items-center justify-center bg-[#E8E2D1] z-100">
-        <span className="text-black/80 text-xl font-chakra uppercase font-bold">
+      <div className="relative w-full h-10  flex items-center justify-center bg-[#E8E2D1] z-100">
+        <span
+          ref={bannerRef}
+          className="text-black/80 text-xl font-chakra uppercase font-bold"
+        >
           Under Development
         </span>
       </div>
-      <div className="flex items-start flex-col justify-start w-full text-center z-100 font-air-strike">
-        <h1 className="text-[19.5vw] font-bold uppercase text-center text-[#E8E2D1] leading-56 tracking-tighter">
+      <div className="flex items-start flex-col justify-start w-full text-center z-90 font-air-strike">
+        <h1
+          ref={titleRef}
+          className="text-[19.5vw] font-bold uppercase text-center text-[#E8E2D1] leading-30 md:leading-56 tracking-tighter"
+        >
           Overgoal
         </h1>
       </div>
-      <Header />
+      <div ref={headerRef}>{/* <Header /> */}</div>
 
       <div
         ref={sectionRef}
-        className="w-full h-full mt-2 grid grid-cols-5 z-90 font-chakra  "
+        className="w-full h-full mt-2 grid grid-cols-5 z-90 font-chakra "
       >
-        {/* Main Content Area - Right Side */}
         <div id="content" className="col-span-5 ">
-          <div className="p-10 pt-2 space-y-16">
-            {/* Overview Section */}
-            <section
+          <div className="p-10 pt-2 ">
+            <div
               id="overview"
               className="scroll-mt-6 flex flex-col items-center justify-center w-full "
             >
-              <div className="w-full flex flex-col items-center justify-center">
-                <div className="space-y-10 text-white/90 text-lg leading-relaxed flex flex-row gap-10 items-start justify-start">
-                 
-
-                  <div className="flex flex-col gap-4 text-center justify-center items-center p-8 pt-2 rounded-lg">
-                    <h2 className="text-3xl font-bold text-white mb-6 uppercase tracking-wider">
-                      Welcome to the future of football
-                    </h2>
-                    <div className="flex flex-col gap-6 max-w-xl w-full">
-                      <p className="tracking-wide text-base">
-                        Overgoal is a narrative-driven, on-chain football RPG
-                        built on Starknet and Dojo. Guide your Legend through a
-                        career filled with choices, matches, and high-stakes
-                        decisions—all shaped by real player-driven data.
-                      </p>
-                      <p className="tracking-wide text-base">
-                        Experience skill-based progression, transparent
-                        economics, and true community governance in a
-                        persistent, evolving world where every decision matters
-                        and  <span className="text-primary">every match tells a story.</span>
-                      </p>
-                    </div>
-                    <div className="flex flex-col items-center gap-4 mt-4  pt-4 border-t border-white/20">
-                      <p className="text-sm text-white/50 text-center">Powered by</p>
-                      <div className="flex items-center gap-8">
-                        <Image
-                          src="/dojo-icon.svg"
-                          alt="Dojo Engine"
-                          width={50}
-                          height={50}
-                          className="object-contain"
-                        />
-                        <Image
-                          src="/starknet.png"
-                          alt="Starknet"
-                          width={50}
-                          height={50}
-                          className="object-contain"
-                        />
-                        <Image
-                          src="/cart.png"
-                          alt="cart"
-                          width={60}
-                          height={60}
-                          className="object-contain"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </section>
-
-            {/* Narrative Gameplay Section */}
+              <Image
+                src="/heroImage.png"
+                alt="Overgoal"
+                width={1180}
+                height={1180}
+                className="object-contain absolute top-[20vh]  md:top-10 w-[100vw] md:w-[1180px] z-100 left-1/2  -translate-x-1/2"
+              />
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Expanded Call-to-Action Section */}
+      <GameSection />
     </section>
   );
 }
