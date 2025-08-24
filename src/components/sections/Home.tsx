@@ -103,7 +103,7 @@ export default function HomeSection() {
       <div className="flex items-start flex-col justify-start w-full text-center z-90 font-air-strike">
         <h1
           ref={titleRef}
-          className="text-[19.5vw] font-bold uppercase text-center text-[#E8E2D1] leading-56 tracking-tighter"
+          className="text-[19.5vw] font-bold uppercase text-center text-[#E8E2D1] leading-30 md:leading-56 tracking-tighter"
         >
           Overgoal
         </h1>
@@ -125,7 +125,7 @@ export default function HomeSection() {
                 alt="Overgoal"
                 width={1180}
                 height={1180}
-                className="object-contain absolute top-[20vh] md:top-10 w-[100vw] md:w-[1180px] z-100 left-1/2  -translate-x-1/2"
+                className="object-contain absolute top-[20vh]  md:top-10 w-[100vw] md:w-[1180px] z-100 left-1/2  -translate-x-1/2"
               />
             </div>
           </div>

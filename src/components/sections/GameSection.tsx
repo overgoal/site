@@ -8,7 +8,7 @@ import { CyberpunkContainer } from '../cyberpunk-container'
 
 export default function GameSection() {
   return (
-    <div className="w-full min-h-screen flex flex-col justify-center relative  items-center z-100 p-10 mt-0 lg:mt-20">
+    <div className="w-full min-h-screen flex flex-col justify-center relative  items-center z-100 p-10 mt-20">
         <div className="flex flex-col justify-center absolute top-[15vh] sm:top-[30vh] md:top-[30vh] lg:top-90 left-0 items-center max-w-full w-full h-screen  mx-auto text-white text-center space-y-8">
           <div
             className={cn(
