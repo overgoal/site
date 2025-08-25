@@ -5,6 +5,12 @@ interface CyberpunkContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: "primary" | "secondary" | "danger" | "outline"
   glitch?: boolean
   pulse?: boolean
+  borderConfig?: {
+    topLeft?: boolean
+    topRight?: boolean
+    bottomLeft?: boolean
+    bottomRight?: boolean
+  }
 }
 
 export function CyberpunkContainer({
@@ -13,16 +19,23 @@ export function CyberpunkContainer({
   variant = "primary",
   glitch = false,
   pulse = false,
+  borderConfig = {
+    topLeft: false,
+    topRight: false,
+    bottomLeft: false,
+    bottomRight: false,
+  },
   ...props
 }: CyberpunkContainerProps) {
   const baseClasses = `
     relative p-4 font-mono
     font-chakra
     transition-all duration-300 ease-out
-    overflow-hidden
+    // overflow-hidden
     bg-black/80
     group
     cyberpunk-clip
+
   `
 
   const variantClasses = {
@@ -63,17 +76,17 @@ export function CyberpunkContainer({
   return (
     <div className={cn(baseClasses, variantClasses[variant], glitchClasses, pulseClasses, className)} {...props}>
       {/* Background geometric overlay */}
-      <div
+      {/* <div
         className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent 
                       transform -skew-x-12 -translate-x-full group-hover:translate-x-full 
                       transition-transform duration-1000 ease-out"
-      />
+      /> */}
 
       {/* Corner accents */}
-      <div className="absolute top-2 left-2 w-6 h-6 border-t-2 border-l-2 border-current opacity-60" />
-      {/* <div className="absolute top-2 right- w-6 h-6 border-t-2 border-r-2 border-current opacity-60" /> */}
-      {/* <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-current opacity-60" /> */}
-      <div className="absolute bottom-2 right-2 w-6 h-6 border-b-2 border-r-2 border-current opacity-60" />
+      {borderConfig.topLeft && <div className="absolute top-2 left-2 w-6 h-6 border-t-2 border-l-2 border-current opacity-60" />}
+      {borderConfig.topRight && <div className="absolute top-2 right-2 w-6 h-6 border-t-2 border-r-2 border-current opacity-60" />}
+      {borderConfig.bottomLeft && <div className="absolute bottom-2 left-2 w-6 h-6 border-b-2 border-l-2 border-current opacity-60" />}
+      {borderConfig.bottomRight && <div className="absolute bottom-2 right-2 w-6 h-6 border-b-2 border-r-2 border-current opacity-60" />}
 
       {/* Grid pattern overlay */}
       <div

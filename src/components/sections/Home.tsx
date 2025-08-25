@@ -8,6 +8,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
 import GameSection from "./GameSection";
+import FeaturesSection from "./FeaturesSection";
+import { cn } from "@/utils/cn";
+import Link from "next/link";
+import { ChevronDownIcon } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -97,7 +102,7 @@ export default function HomeSection() {
           ref={bannerRef}
           className="text-black/80 text-xl font-chakra uppercase font-bold"
         >
-          Under Development
+          Football finally has become on-chain
         </span>
       </div>
       <div className="flex items-start flex-col justify-start w-full text-center z-90 font-air-strike">
@@ -130,10 +135,17 @@ export default function HomeSection() {
             </div>
           </div>
         </div>
+        <div
+          className={cn(
+            "to-black pointer-events-none absolute -top-31 left-0 z-10 w-full bg-gradient-to-b from-transparent px-12",
+            `h-32` // Dynamic height using constant
+          )}
+        ></div>
       </div>
 
       {/* Expanded Call-to-Action Section */}
       <GameSection />
+      <FeaturesSection />
     </section>
   );
 }
