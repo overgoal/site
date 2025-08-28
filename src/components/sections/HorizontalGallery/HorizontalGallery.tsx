@@ -1,14 +1,12 @@
 "use client";
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useState } from "react";
 import { CyberpunkContainer } from "@/components/cyberpunk-container";
 import HorizontalGalleryItem from "./HorizontalGalleryItem";
 import { galleryData } from "./data";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
-type Props = {};
-
-export default function HorizontalGallery({}: Props) {
+export default function HorizontalGallery() {
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
@@ -137,10 +135,10 @@ export default function HorizontalGallery({}: Props) {
             className="flex items-center py-8"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-          >
-            {duplicatedData.map((item, index) => (
-              <div key={`${item.id}-${index}`} className="gallery-item">
-                <HorizontalGalleryItem item={item} index={index} />
+          > 
+            {duplicatedData.map((item) => (
+              <div key={`${item.id}`} className="gallery-item">
+                <HorizontalGalleryItem key={`${item.id}`} item={item}  />
               </div>
             ))}
           </div>

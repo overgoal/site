@@ -6,9 +6,8 @@ import { Button } from "@/components/ui/button";
 import { ChevronDownIcon } from "lucide-react";
 import Image from "next/image";
 
-type Props = {};
 
-export default function GameSection(props: Props) {
+export default function GameSection() {
   return (
     <div className="w-full max-h-screen h-full relative z-100  bg-black">
       <div

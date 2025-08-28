@@ -2,9 +2,8 @@ import React from "react";
 import { CyberpunkContainer } from "../cyberpunk-container";
 import Image from "next/image";
 
-type Props = {};
 
-export default function FeaturesSection(props: Props) {
+export default function FeaturesSection() {
   return (
     <CyberpunkContainer className="w-full h-screen  flex items-center justify-center text-white z-20 pt-0 mt-10" >
       {/* Feature highlights */}

@@ -2,11 +2,8 @@ import React from "react";
 import { teamData } from "@/components/sections/Team/data";
 import TeamItem from "@/components/sections/Team/TeamItem";
 import { CyberpunkContainer } from "@/components/cyberpunk-container";
-import { cn } from "@/utils/cn";
 
-type Props = {};
-
-export default function TeamSection({}: Props) {
+export default function TeamSection() {
   return (
     <CyberpunkContainer className="w-full relative ">
       <div className="border-t border-white/10 pt-12 max-w-4xl mx-auto" />

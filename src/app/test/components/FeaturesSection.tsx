@@ -1,14 +1,7 @@
 import { CyberpunkContainer } from "@/components/cyberpunk-container";
-import Image from "next/image";
-
-import featuresData from "@/components/sections/Features/data";
 import FeaturesItem from "@/components/sections/Features/FeaturesItem";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
-type Props = {};
-
-export default function FeaturesSection({}: Props) {
+export default function FeaturesSection() {
   return (
     <CyberpunkContainer className="w-full relative  pb-12 ">
       <div className="w-full h-full flex flex-col items-center justify-center">
@@ -27,8 +20,6 @@ export default function FeaturesSection({}: Props) {
         </CyberpunkContainer>
         <div className="grid grid-cols-1 md:grid-cols-5 grid-rows-2 w-full mt-2 px-6 md:px-24 gap-y-24 gap-x-12">
           <FeaturesItem />
-
-          
         </div>
       </div>
     </CyberpunkContainer>

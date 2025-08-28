@@ -6,15 +6,12 @@ import { timelineData } from "./data";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
-type Props = {};
 
-export default function Timeline({}: Props) {
+export default function Timeline() {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
 
@@ -68,8 +65,8 @@ export default function Timeline({}: Props) {
 
         {/* Timeline Items */}
         <div className="relative ">
-          {timelineData.map((item, index) => (
-            <TimelineItem key={item.id} item={item} index={index} />
+          {timelineData.map((item) => (
+            <TimelineItem key={item.id} item={item}  />
           ))}
         </div>
         <div className="col-span-5 row-span-2 md:col-span-5  rounded-lg  flex flex-col items-center justify-center w-full ">

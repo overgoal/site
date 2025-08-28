@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -7,14 +7,12 @@ import { GalleryItem } from "./data";
 
 type Props = {
   item: GalleryItem;
-  index: number;
 };
 
-export default function HorizontalGalleryItem({ item, index }: Props) {
+export default function HorizontalGalleryItem({ item }: Props) {
   const itemRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
-  const [isHovered, setIsHovered] = useState(false);
 
   useGSAP(() => {
     if (!itemRef.current || !overlayRef.current) return;
@@ -33,8 +31,6 @@ export default function HorizontalGalleryItem({ item, index }: Props) {
   const handleMouseEnter = () => {
     if (!overlayRef.current || !imageRef.current) return;
 
-    setIsHovered(true);
-
     gsap.to(overlayRef.current, {
       opacity: 1,
       y: 0,
@@ -50,8 +46,6 @@ export default function HorizontalGalleryItem({ item, index }: Props) {
 
   const handleMouseLeave = () => {
     if (!overlayRef.current || !imageRef.current) return;
-
-    setIsHovered(false);
 
     gsap.to(overlayRef.current, {
       opacity: 0,
@@ -96,16 +90,13 @@ export default function HorizontalGalleryItem({ item, index }: Props) {
         className="absolute inset-0 mt-auto h-12  flex flex-col justify-start items-center p-3 md:p-4 text-white bg-black border-white backdrop-blur-sm "
       >
         {/* Top Section - Category */}
-       
 
         {/* Bottom Section - Content */}
         <div className="space-y-1 ">
           <h3 className="font-bold leading-tight text-lg">{item.title}</h3>
-         
         </div>
 
         {/* Center Hover Indicator */}
-      
       </div>
 
       {/* Subtle border glow effect */}

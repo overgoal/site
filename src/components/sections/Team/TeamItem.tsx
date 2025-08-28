@@ -1,8 +1,7 @@
-import { CyberpunkContainer } from "@/components/cyberpunk-container";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { Twitter, Linkedin, Github, Globe } from "lucide-react";
+import { Linkedin, Github, Globe } from "lucide-react";
 
 type Props = {
   name: string;
@@ -38,7 +37,13 @@ export default function TeamItem({
         <div className="flex flex-row items-center justify-center gap-4 ">
           {socials.twitter && (
             <Link href={socials.twitter} target="_blank">
-              <Image src="/twitter.png" alt="Twitter" width={24} height={24} className="fill-white text-white bg-white" />
+              <Image
+                src="/twitter.png"
+                alt="Twitter"
+                width={24}
+                height={24}
+                className="fill-white text-white bg-white"
+              />
               {/* <Twitter className="w-6 h-6 cursor-pointer " /> */}
             </Link>
           )}

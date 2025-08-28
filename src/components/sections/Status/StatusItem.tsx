@@ -1,17 +1,21 @@
-import React from 'react'
-import { Tweet } from 'react-tweet'
-import Image from 'next/image'
+import React from "react";
+import { Tweet } from "react-tweet";
+import Image from "next/image";
 
 type Props = {
-    isTweet?: boolean
-    imageUrl: string
-    title: string  
-    description: string
-    tweetId: string
-}
+  isTweet?: boolean;
+  imageUrl: string;
+  title: string;
+  tweetId: string;
+};
 
-export default function StatusItem({isTweet, imageUrl, title, description, tweetId}: Props) {
-  return (  
+export default function StatusItem({
+  isTweet,
+  imageUrl,
+  title,
+  tweetId,
+}: Props) {
+  return (
     <div>
       {isTweet ? (
         <Tweet id={tweetId} />

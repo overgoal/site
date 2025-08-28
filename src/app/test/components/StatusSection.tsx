@@ -1,14 +1,11 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { cn } from "@/utils/cn";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import Image from "next/image";
 import { Tweet } from "react-tweet";
 gsap.registerPlugin(ScrollTrigger);
-
-type Props = {};
 
 // Content data structure for different scroll states
 interface ContentState {
@@ -56,16 +53,12 @@ const contentStates: ContentState[] = [
   },
 ];
 
-export default function StatusSection({}: Props) {
+export default function StatusSection() {
   const statusSectionRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const descriptionRef = useRef<HTMLParagraphElement>(null);
   const pinRef = useRef<HTMLDivElement>(null);
-
-  // Track current content state
-  const currentStateRef = useRef(0);
-  const [currentStateIndex, setCurrentStateIndex] = useState(0);
 
   // Set up ScrollTrigger pin animation using useGSAP hook
   useGSAP(

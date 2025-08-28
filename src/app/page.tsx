@@ -7,9 +7,8 @@ import GameSection from "./test/components/GameSection";
 import Social from "./test/components/Social";
 import TeamSection from "./test/components/TeamSection";
 
-type Props = {};
 
-export default function page({}: Props) {
+export default function page() {
   return (
     <>
       <HomeSection />

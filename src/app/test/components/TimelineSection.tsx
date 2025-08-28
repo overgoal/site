@@ -1,7 +1,5 @@
 import Timeline from "@/components/sections/Timeline/Timeline";
 
-type Props = {};
-
-export default function TimelineSection({}: Props) {
+export default function TimelineSection() {
   return <Timeline />;
 }

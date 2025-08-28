@@ -1,13 +1,12 @@
 "use client";
 import React, { useRef, useState } from "react";
 import Image from "next/image";
-import { CyberpunkContainer } from "@/components/cyberpunk-container";
 import featuresData from "./data";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { cn } from "@/utils/cn";
 
-type Props = {};
+
 
 type Feature = {
   index: number;
@@ -23,7 +22,7 @@ const images = [
   { image: "/legend11.png", index: 3 },
 ];
 
-export default function FeaturesItem({}: Props) {
+export default function FeaturesItem() {
   const [currentFeature, setCurrentFeature] = useState<Feature>({
     index: 0,
     image: "/start_back.png",

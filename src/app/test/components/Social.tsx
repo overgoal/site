@@ -1,7 +1,6 @@
 "use client";
 import React, { useRef } from "react";
 import { Tweet } from "react-tweet";
-import { cn } from "@/utils/cn";
 import { CyberpunkContainer } from "@/components/cyberpunk-container";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -38,9 +37,7 @@ const gamePhases = [
   },
 ];
 
-type Props = {};
-
-export default function Social({}: Props) {
+export default function Social() {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
 

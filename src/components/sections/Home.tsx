@@ -10,10 +10,6 @@ import { useGSAP } from "@gsap/react";
 import GameSection from "./GameSection";
 import FeaturesSection from "./FeaturesSection";
 import { cn } from "@/utils/cn";
-import Link from "next/link";
-import { ChevronDownIcon } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import StatusSection from "./Status/StatusItem";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 

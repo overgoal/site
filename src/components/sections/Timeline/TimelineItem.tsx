@@ -17,10 +17,9 @@ type TimelineItemType = {
 
 type Props = {
   item: TimelineItemType;
-  index: number;
 };
 
-export default function TimelineItem({ item, index }: Props) {
+export default function TimelineItem({ item }: Props) {
   const itemRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
