@@ -8,13 +8,13 @@ type Props = {};
 
 export default function TeamSection({}: Props) {
   return (
-    <CyberpunkContainer className="w-full  relative ">
+    <CyberpunkContainer className="w-full relative ">
       <div className="border-t border-white/10 pt-12 max-w-4xl mx-auto" />
 
       <h2 className="text-5xl font-bold text-white/80 text-center mb-12  ">
         Meet the Team
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 px-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-4 md:px-12">
         {teamData.map((member) => (
           <TeamItem
             key={member.name}

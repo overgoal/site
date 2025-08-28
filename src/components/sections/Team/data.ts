@@ -7,8 +7,6 @@ export const teamData = [
       "Launched El Super DT, Uruguay's 1st fantasy football game. CTO at Eyecue Insights, Co-founder at Lambda Class Game Studio. 2024 Dojo NY Residency participant.",
     socials: {
       twitter: "https://x.com/matigru93",
-      linkedin: "https://www.linkedin.com/in/matiasgrunwaldt/",
-      github: "https://github.com/matiasgrunwaldt",
     },
   },
   {

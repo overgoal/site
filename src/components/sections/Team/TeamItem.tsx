@@ -32,13 +32,14 @@ export default function TeamItem({
       </div>
       <Image src={image} alt={name} width={300} height={300} />
       <div className="flex flex-col items-center justify-between gap-2 h-full py-2">
-        <p className=" text-base text-white/80 text-center my-2">
+        <p className=" text-base text-white/80 text-center my-4 md:my-2  px-24 md:px-0">
           {description}
         </p>
         <div className="flex flex-row items-center justify-center gap-4 ">
           {socials.twitter && (
             <Link href={socials.twitter} target="_blank">
-              <Twitter className="w-6 h-6 cursor-pointer " />
+              <Image src="/twitter.png" alt="Twitter" width={24} height={24} className="fill-white text-white bg-white" />
+              {/* <Twitter className="w-6 h-6 cursor-pointer " /> */}
             </Link>
           )}
           {socials.linkedin && (
