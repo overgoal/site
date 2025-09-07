@@ -57,9 +57,7 @@ export default function Timeline() {
             </h2>
           </CyberpunkContainer>
           <p className="text-white/70 text-lg mt-6 max-w-2xl mx-auto">
-            Monthly competitions to win prizes and boost your ranking or
-            individual tournament to win a prize pool. Be the best and claim
-            your rewards!
+          Defend your club in monthly seasons, where rewards depend on both team and personal performance — then prove yourself in weekend tournaments, where it’s all on you.
           </p>
         </div>
 

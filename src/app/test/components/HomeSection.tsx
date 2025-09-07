@@ -8,7 +8,7 @@ export default function HomeSection() {
       {/* <BackgroundBlur /> */}
       <div className="relative w-full h-10  flex items-center justify-center bg-[#E8E2D1] z-100">
         <span className="text-black/80 text-xl font-chakra uppercase font-bold">
-          Football finally has become on-chain
+        The first football RPG where every decision matters
         </span>
       </div>
       <div className="flex items-start flex-col justify-start w-full text-center z-90 font-air-strike">

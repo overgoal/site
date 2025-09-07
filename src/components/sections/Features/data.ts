@@ -1,22 +1,22 @@
 const featuresData = [
   {
-    title: "Select your Striker and team",
-    description: "Select a team , a playstyle and compete in the season to bring the glory to your team",
+    title: "Create Your Striker. Get Drafted.",
+    description: "Choose your path, master your style, and fight for glory",
     image: "/start_back.png",
   },
   {
-    title: "Become legend in the field",
-    description: "Each desition you take in the field matters, make the right ones",
+    title: "Become a football legend",
+    description: "Every decision on the pitch matters — make it count",
     image: "/matchScene.png",
   },
   {
     title: "Life continues outside the field",
-    description: "Wwhat you do outside the field will affect your reputation and brand, choose wisely",
+    description: "Your choices off the pitch shape your reputation and your legacy — choose wisely.",
     image: "/nonMatch.png",
   },
   {
-    title: "Become Legend",
-    description: "Become the legend and achieve the rewards of the season $$$",
+    title: "Claim Your Glory",
+    description: "Legends don’t just play — they take home the season’s spoils.",
     image: "/legend11.png",
   },
 ]

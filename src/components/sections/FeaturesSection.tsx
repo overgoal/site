@@ -13,7 +13,7 @@ export default function FeaturesSection() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full mt-12 px-12 ">
         <div className="text-center space-y-2  flex flex-col items-center justify-center border-r border-white/10  ">
           <div className="text-xl font-bold text-[#E8E2D1]">
-            Select your Striker and team
+          Create Your Striker. Get Drafted.
           </div>
           <div className="text-sm text-white/70">
             <Image

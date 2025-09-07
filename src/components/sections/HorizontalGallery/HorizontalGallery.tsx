@@ -113,7 +113,7 @@ export default function HorizontalGallery() {
               className="flex flex-col items-center space-y-4"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white">
-                Game Screenshots
+                Current State
               </h2>
               <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent" />
               <p className="text-white/70 text-lg max-w-2xl">

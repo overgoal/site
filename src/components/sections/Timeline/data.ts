@@ -1,17 +1,17 @@
 export const timelineData = [
   {
     id: 1,
-    title: "Compete in daily seaons",
+    title: "Monthly Seasons",
     description:
-      "Each Overgoal season is a month-long competition where every match counts. Earn team points, claim daily rewards, and help your squad climb the leaderboard. At season’s end, top teams share the prize pool and new opportunities open for all players. Build your legacy with every season.",
+      "Each Overgoal season is a month-long competition where every match counts. Earn points for your club and push your squad up the leaderboard. At season’s end, rewards are split first by club ranking and then by each player’s contribution. Your performance shapes your future — finish strong and you could be drafted into a better club, or risk sliding down the ranks.",
     image: "/season_tro.png",
     layout: "image-left" as const,
   },
   {
     id: 2,
-    title: "Enter weekend tournaments",
+    title: "Weekend Tournaments",
     description:
-      "Tournaments are weekly, opt-in events with buy-ins, extra prizes, and team point boosts. These buy-in events offer players the chance to win exclusive prizes, including badges, traits, REP, and $GOAL. Tournaments are individual events, so you can compete against your friends or strangers.",
+      "Tournaments are weekly, opt-in events with buy-ins and high stakes. Compete for the chance to win exclusive rewards like badges, traits, REP, and $GOAL. These are individual events — it’s all up to you.",
     image: "/tournam_tro.png",
     layout: "image-right" as const,
   },

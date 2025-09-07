@@ -105,7 +105,7 @@ export default function FeaturesItem() {
       };
 
       // Create interval for cycling through images
-      const interval = setInterval(cycleToNextImage, 3000);
+      const interval = setInterval(cycleToNextImage, 5000);
 
       // Cleanup function handled automatically by useGSAP
       return () => clearInterval(interval);

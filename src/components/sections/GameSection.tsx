@@ -50,10 +50,10 @@ export default function GameSection() {
                 className="flex flex-col max-w-2xl  px-12 "
               >
                 <h2 className="text-white/80 text-center text-5xl font-bold mb-6">
-                  More Than a Match
+                  More Than a Match!
                 </h2>
                 <p className="text-white/80 text-center text-lg font-chakra">
-                  is a{" "}
+                  Overgoalis a{" "}
                   <span className="text-primary font-bold">fully on-chain</span>{" "}
                   RPG, decision-making game that blends skill, strategy, and a
                   touch of chaos. Set in a near-future world where footballers
@@ -67,7 +67,7 @@ export default function GameSection() {
                 </p>
               </CyberpunkContainer>
               <div className="flex flex-col gap-4">
-                <h4>Build on</h4>
+                <h4>Powered by</h4>
                 <div className="flex flex-row  gap-4 items-center justify-center">
                   <Link href="https://dojoengine.org/" target="_blank">
                     <Image

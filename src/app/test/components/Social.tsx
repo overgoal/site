@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 const gamePhases = [
   {
     id: 1,
-    title: "Team reunion",
+    title: "Fully On-Chain. Unstoppable",
     description:
       "Traditional games are fragile — when servers shut down, everything you’ve earned disappears. Overgoal is the next step: a fully on-chain football experience where characters, stats, and achievements live forever. This isn’t just ownership — it’s a new era of unstoppable games.",
     image: "/teamup.jpeg",
@@ -23,15 +23,15 @@ const gamePhases = [
     id: 2,
     title: "Dojo Game Jam",
     description:
-      "Overgoal wins the Dojo Game Jam, in 48hs shipping a production ready game. Fully on chain contracts and modern UI",
+      "Overgoal won the latest Dojo Game Jam, in 48hs shipping a production ready game. Fully on chain contracts and modern UI",
     image: "",
     tweetId: "1940062911088758849",
   },
   {
     id: 3,
-    title: "Dev connect",
+    title: "Devconnect 2025",
     description:
-      "Next steps, arrive to Devconnect Argentina in September where Web3 and Football meet with an unique tournament presenting the game to the world",
+      "Join our first seasion during Devconnect Argentina - November 2025- where we will present the game to the world",
     image: "/devco.png",
     tweetId: "",
   },
