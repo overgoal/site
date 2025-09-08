@@ -17,11 +17,23 @@ export default function HorizontalGalleryItem({ item }: Props) {
   useGSAP(() => {
     if (!itemRef.current || !overlayRef.current) return;
 
-    // Set initial states
-    gsap.set(overlayRef.current, {
-      opacity: 0,
-      y: 20,
-    });
+    // Check if user prefers reduced motion or is on mobile
+    const isMobile = window.innerWidth < 768;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (isMobile || prefersReducedMotion) {
+      // Show overlay by default on mobile (no hover available)
+      gsap.set(overlayRef.current, {
+        opacity: 1,
+        y: 0,
+      });
+    } else {
+      // Set initial hidden state for desktop hover behavior
+      gsap.set(overlayRef.current, {
+        opacity: 0,
+        y: 20,
+      });
+    }
 
     return () => {
       // Cleanup will be handled by parent component
@@ -30,6 +42,10 @@ export default function HorizontalGalleryItem({ item }: Props) {
 
   const handleMouseEnter = () => {
     if (!overlayRef.current || !imageRef.current) return;
+
+    // Check if on mobile - skip hover animations
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) return;
 
     gsap.to(overlayRef.current, {
       opacity: 1,
@@ -47,6 +63,10 @@ export default function HorizontalGalleryItem({ item }: Props) {
   const handleMouseLeave = () => {
     if (!overlayRef.current || !imageRef.current) return;
 
+    // Check if on mobile - skip hover animations
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) return;
+
     gsap.to(overlayRef.current, {
       opacity: 0,
       y: 20,
@@ -62,7 +82,7 @@ export default function HorizontalGalleryItem({ item }: Props) {
 
   // Uniform container size for all gallery items
   const getContainerClasses = () => {
-    return "relative overflow-hidden rounded-xl group cursor-pointer w-96 h-96";
+    return "relative overflow-hidden rounded-xl group cursor-pointer w-72 h-72 md:w-96 md:h-96";
   };
 
   return (
