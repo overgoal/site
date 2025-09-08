@@ -12,13 +12,13 @@ export default function GameSection() {
     <div className="w-full h-auto relative z-100  bg-black">
       <div
         className={cn(
-          "to-black pointer-events-none absolute -top-16 md:-top-31 left-0 z-10 w-full bg-gradient-to-b from-transparent px-12",
+          "to-black pointer-events-none absolute -top-16 md:-top-20 left-0 z-10 w-full bg-gradient-to-b from-transparent px-12",
           `h-32` // Dynamic height using constant
         )}
       ></div>
-      <CyberpunkContainer className="w-full py-4 md:py-8  z-20 ">
-        <div className="w-full flex flex-col items-center justify-center">
-          <div className="space-y-2 flex flex-col items-center justify-center gap-3">
+      <CyberpunkContainer className="w-full py-4 md:py-16  z-20 ">
+        <div className="w-full flex flex-col items-center justify-center mt-0 md:mt-8">
+          <div className="space-y-2 flex flex-col items-center justify-center gap-3 md:gap-20">
            
             {/* Description section - shown first on mobile, second on desktop */}
             <div className="order-1 md:order-2 w-full">
