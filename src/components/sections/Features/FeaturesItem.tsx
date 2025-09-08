@@ -118,8 +118,8 @@ export default function FeaturesItem() {
       ref={containerRef}
       className="row-span-2 col-span-5  relative h-full transition-all duration-300"
     >
-      <div className="w-full h-full  transition-all duration-300 overflow-hidden rounded-lg flex flex-col xl:flex-row items-center text-center justify-center ">
-        <div className="flex flex-col md:flex-col  items-center justify-center gap-3  mr-0 md:mr-4 ">
+      <div className="w-full h-full  transition-all duration-300 overflow-hidden rounded-lg flex flex-col xl:flex-row items-center text-center justify-center max-w-6xl mx-auto">
+        <div className="flex flex-col md:flex-col  items-center justify-center gap-3  mr-0 xl:mr-8 flex-1">
           {featuresData.map((feature, index) => (
             <div
               onClick={() => {
@@ -130,7 +130,7 @@ export default function FeaturesItem() {
               }}
               key={index}
               className={cn(
-                "cursor-pointer border border-white/10  box-shadow-lg  flex flex-col  items-center md:items-start justify-center  py-6 w-full gap-2 lg:gap-4 rounded-lg px-8"
+                "cursor-pointer border border-white/10  box-shadow-lg  flex flex-col  items-center md:items-start justify-center  py-4 w-full gap-2 lg:gap-3 rounded-lg px-6"
               )}
             >
               <span
@@ -147,15 +147,15 @@ export default function FeaturesItem() {
             </div>
           ))}
         </div>
-        <div className="relative w-4/5 h-full">
+        <div className="relative w-4/5 h-full flex-1 flex items-center justify-center">
           {/* Previous image - stays visible as background during transition */}
           <Image
             ref={currentFeatureRef}
             src={currentFeature.image}
             alt={`Previous feature: ${currentFeature.title}`}
-            width={500}
-            height={500}
-            className="w-full h-full object-cover  md:w-[700px] mt-4 xl:mt-0 lg:pt-0 border border-white/10 rounded-lg"
+            width={400}
+            height={400}
+            className="object-cover w-full max-w-[500px] h-auto border border-white/10 rounded-lg"
             style={{ zIndex: 1 }}
           />
           {/* Current image - fades in on top during transition */}

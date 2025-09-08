@@ -27,7 +27,7 @@ export default function GameSection() {
               <CyberpunkContainer className="w-full h-full p-0 z-20   ">
                 <div className="w-full h-full flex flex-col items-center justify-center">
                   <Link href="https://play.overgoal.gg/" target="_blank">
-                    <Button className="px-16 py-6 cursor-pointer text-2xl! font-chakra text-black font-bold  transition-all duration-300 hover:scale-105 hover:shadow-2xl bg-[#E8E2D1]  border-1 border-black">
+                    <Button className="px-16 py-6 cursor-pointer text-2xl! font-chakra text-black font-bold  transition-all duration-300 hover:scale-105 hover:shadow-2xl bg-[#0abee1]  border-1 border-black">
                       Play Now
                     </Button>
                   </Link>

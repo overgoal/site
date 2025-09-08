@@ -45,14 +45,14 @@ export default function Timeline() {
 
   return (
     <section ref={containerRef} className="w-full relative">
-      <CyberpunkContainer className="w-full relative py-12">
+      <CyberpunkContainer className="w-full relative py-8">
         {/* Title */}
-        <div ref={titleRef} className="text-center mb-16">
+        <div ref={titleRef} className="text-center mb-8">
           <CyberpunkContainer
             borderConfig={{}}
             className="inline-block px-8 py-4"
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-white">
+            <h2 className="text-2xl md:text-4xl font-bold text-white">
               Compete in Seasons and Tournaments
             </h2>
           </CyberpunkContainer>

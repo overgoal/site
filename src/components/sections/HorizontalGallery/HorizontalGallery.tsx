@@ -112,7 +112,7 @@ export default function HorizontalGallery() {
               ref={titleRef}
               className="flex flex-col items-center space-y-4"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white">
+              <h2 className="text-2xl md:text-4xl font-bold text-white">
                 Current State
               </h2>
               <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent" />
@@ -132,7 +132,7 @@ export default function HorizontalGallery() {
           {/* Scroll Container */}
           <div
             ref={scrollContainerRef}
-            className="flex items-center py-8"
+            className="flex items-center py-6"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           > 

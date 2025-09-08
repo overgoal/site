@@ -30,7 +30,7 @@ export default function Header() {
                 className="item block "
                 aria-label="Play Overgoal now"
               >
-                <Button className="px-16 cursor-pointer w-full bg-[#E8E2D1] text-black hover:bg-white/90 font-bold py-3 transition-all duration-200">
+                <Button className="px-16 cursor-pointer w-full bg-[#0abee1] text-black hover:bg-white/90 font-bold py-3 transition-all duration-200">
                   Play Now
                 </Button>
               </Link>

@@ -94,7 +94,7 @@ export default function HomeSection() {
       className="w-full h-full flex items-center flex-col justify-start relative "
     >
       <BackgroundBlur />
-      <div className="relative w-full h-10  flex items-center justify-center bg-[#E8E2D1] z-100">
+      <div className="relative w-full h-10  flex items-center justify-center bg-[#0abee1] z-100">
         <span
           ref={bannerRef}
           className="text-black/80 text-xl font-chakra uppercase font-bold"
@@ -105,7 +105,7 @@ export default function HomeSection() {
       <div className="flex items-start flex-col justify-start w-full text-center z-90 font-air-strike">
         <h1
           ref={titleRef}
-          className="text-[19.5vw] font-bold uppercase text-center text-[#E8E2D1] leading-30 md:leading-56 tracking-tighter"
+          className="text-[19.5vw] font-bold uppercase text-center text-white leading-30 md:leading-56 tracking-tighter"
         >
           Overgoal
         </h1>

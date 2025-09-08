@@ -78,24 +78,24 @@ export default function TimelineItem({ item }: Props) {
     switch (item.layout) {
       case "image-left":
         return (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center">
             <div ref={imageRef} className="relative">
               <Image
                 src={item.image}
                 alt={item.title}
-                width={150}
-                height={150}
-                className="w-5/6 object-contain rounded-lg"
+                width={100}
+                height={100}
+                className="w-3/5 object-contain rounded-lg"
               />
             </div>
             <div
               ref={contentRef}
               className="flex flex-col justify-center ml-12 space-y-4"
             >
-              <h3 className="text-2xl md:text-3xl font-bold text-white">
+              <h3 className="text-xl md:text-2xl font-bold text-white">
                 {item.title}
               </h3>
-              <p className="text-white/80 text-base md:text-lg leading-relaxed">
+              <p className="text-white/80 text-sm md:text-base leading-relaxed">
                 {item.description}
               </p>
             </div>
@@ -104,15 +104,15 @@ export default function TimelineItem({ item }: Props) {
 
       case "image-right":
         return (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center">
             <div
               ref={contentRef}
               className="flex flex-col justify-center space-y-4 lg:order-1 order-2"
             >
-              <h3 className="text-2xl md:text-3xl font-bold text-white">
+              <h3 className="text-xl md:text-2xl font-bold text-white">
                 {item.title}
               </h3>
-              <p className="text-white/80 text-base md:text-lg leading-relaxed">
+              <p className="text-white/80 text-sm md:text-base leading-relaxed">
                 {item.description}
               </p>
             </div>
@@ -120,9 +120,9 @@ export default function TimelineItem({ item }: Props) {
               <Image
                 src={"/tournam_tro.png"}
                 alt={item.title}
-                width={150}
-                height={150}
-                className="w-5/6 object-contain rounded-lg"
+                width={100}
+                height={100}
+                className="w-3/5 object-contain rounded-lg"
               />
             </div>
           </div>
@@ -160,7 +160,7 @@ export default function TimelineItem({ item }: Props) {
   };
 
   return (
-    <div ref={itemRef} className="relative w-full py-16">
+    <div ref={itemRef} className="relative w-full py-10">
       {/* Timeline line and dot */}
       <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/50 via-primary/30 to-transparent hidden lg:block" />
 

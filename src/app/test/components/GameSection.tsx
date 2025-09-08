@@ -9,21 +9,21 @@ import Image from "next/image";
 
 export default function GameSection() {
   return (
-    <div className="w-full max-h-screen h-full relative z-100  bg-black">
+    <div className="w-full h-auto relative z-100  bg-black">
       <div
         className={cn(
           "to-black pointer-events-none absolute -top-31 left-0 z-10 w-full bg-gradient-to-b from-transparent px-12",
           `h-32` // Dynamic height using constant
         )}
       ></div>
-      <CyberpunkContainer className="w-full h-full  z-20 ">
-        <div className="w-full h-full flex flex-col items-center justify-center">
-          <div className="space-y-2 flex flex-col items-center justify-center gap-4">
+      <CyberpunkContainer className="w-full py-8  z-20 ">
+        <div className="w-full flex flex-col items-center justify-center">
+          <div className="space-y-2 flex flex-col items-center justify-center gap-3">
            
             <CyberpunkContainer className="w-full h-full p-0 z-20   ">
               <div className="w-full h-full flex flex-col items-center justify-center">
                 <Link href="https://discord.gg/m79rRpzRbU" target="_blank">
-                  <Button className="px-16 py-6 cursor-pointer text-2xl! font-chakra text-black font-bold  transition-all duration-300 hover:scale-105 hover:shadow-2xl bg-[#E8E2D1]  border-1 border-black flex items-center gap-3">
+                  <Button className="px-16 py-6 cursor-pointer text-2xl! font-chakra text-black font-bold  transition-all duration-300 hover:scale-105 hover:shadow-2xl bg-[#0abee1]  border-1 border-black flex items-center gap-3">
                     {/* Discord icon placeholder - replace with actual Discord icon */}
                     <svg 
                       width="24" 
@@ -47,15 +47,15 @@ export default function GameSection() {
             </div>
           </div>
         </div>
-        <div className="flex w-full  relative justify-center max-w-4xl mt-4 md:mt-8  items-center mx-auto flex-col gap-8 px-8 border-b pb-12 border-white/10">
+        <div className="flex w-full  relative justify-center max-w-4xl mt-6  items-center mx-auto flex-col gap-6 px-6 border-b pb-8 border-white/10">
           <CyberpunkContainer
             borderConfig={{
               bottomLeft: true,
               bottomRight: true,
             }}
-            className="flex flex-col  max-w-2xl  px-4 md:px-12 "
+            className="flex flex-col  max-w-2xl  px-4 md:px-8 "
           >
-            <h2 className="text-white/80 text-center text-2xl md:text-5xl font-bold mb-6">
+            <h2 className="text-white/80 text-center text-2xl md:text-4xl font-bold mb-4">
               More Than a Match!
             </h2>
             <p className="text-white/80 text-center text-base md:text-lg font-chakra">

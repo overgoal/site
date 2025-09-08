@@ -4,21 +4,21 @@ import { cn } from "@/utils/cn";
 
 export default function HomeSection() {
   return (
-    <div className="w-full h-[62vh] md:h-[90vh] relative  ">
+    <div className="w-full h-[50vh] md:h-[60vh] relative  ">
       {/* <BackgroundBlur /> */}
-      <div className="relative w-full h-10  flex items-center justify-center bg-[#E8E2D1] z-100">
+      <div className="relative w-full h-10  flex items-center justify-center bg-[#0abee1] z-100">
         <span className="text-black/80 text-xl font-chakra uppercase font-bold">
         The first football RPG where every decision matters
         </span>
       </div>
       <div className="flex items-start flex-col justify-start w-full text-center z-90 font-air-strike">
-        <h1 className="text-[19.5vw] font-bold uppercase text-center text-[#E8E2D1] leading-30 md:leading-56 tracking-tighter">
+        <h1 className="text-[19.5vw] font-bold uppercase text-center text-white leading-30 md:leading-56 tracking-tighter">
           Overgoal
         </h1>
       </div>
-      <div className="w-full h-[50vh] mt-0 grid grid-cols-5 z-90 font-chakra ">
+      <div className="w-full h-[35vh] mt-0 grid grid-cols-5 z-90 font-chakra ">
         <div id="content" className="col-span-5 ">
-          <div className="p-10 pt-2 ">
+          <div className="p-4 pt-2 ">
             <div
               id="overview"
               className="scroll-mt-6 flex flex-col items-center justify-center w-full "
@@ -26,9 +26,9 @@ export default function HomeSection() {
               <Image
                 src="/heroImage.png"
                 alt="Overgoal"
-                width={1180}
-                height={1180}
-                className="object-contain absolute top-[20vh]  md:top-10 w-[100vw] md:w-[1180px] z-100 left-1/2  -translate-x-1/2"
+                width={800}
+                height={800}
+                className="object-contain absolute top-[15vh] md:top-8 w-[90vw] md:w-[800px] z-100 left-1/2  -translate-x-1/2"
               />
             </div>
           </div>

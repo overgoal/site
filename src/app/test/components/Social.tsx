@@ -186,7 +186,7 @@ function PhaseItem({ phase, index }: PhaseItemProps) {
                 bottomLeft: false,
                 bottomRight: false,
               }}
-              className="inline-flex justify-start bg-[#E8E2D1]  items-start py-2"
+              className="inline-flex justify-start bg-[#0abee1]  items-start py-2"
             >
               <div>
                 <h3 className="text-2xl md:text-3xl font-bold  text-black">
