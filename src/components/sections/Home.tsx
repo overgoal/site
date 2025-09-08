@@ -94,10 +94,10 @@ export default function HomeSection() {
       className="w-full h-full flex items-center flex-col justify-start relative "
     >
       <BackgroundBlur />
-      <div className="relative w-full h-10  flex items-center justify-center bg-[#0abee1] z-100">
+      <div className="relative w-full h-16 md:h-10 flex items-center justify-center bg-[#0abee1] z-100">
         <span
           ref={bannerRef}
-          className="text-black/80 text-xl font-chakra uppercase font-bold"
+          className="text-black/80 text-lg md:text-xl font-chakra uppercase font-bold text-center px-4 md:px-0"
         >
           The first football RPG where every decision matters
         </span>

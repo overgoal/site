@@ -4,10 +4,10 @@ import { cn } from "@/utils/cn";
 
 export default function HomeSection() {
   return (
-    <div className="w-full h-[50vh] md:h-[60vh] relative  ">
+    <div className="w-full h-[40vh] md:h-[60vh] relative  ">
       {/* <BackgroundBlur /> */}
-      <div className="relative w-full h-10  flex items-center justify-center bg-[#0abee1] z-100">
-        <span className="text-black/80 text-xl font-chakra uppercase font-bold">
+      <div className="relative w-full h-16 md:h-10 flex items-center justify-center bg-[#0abee1] z-100">
+        <span className="text-black/80 text-lg md:text-xl font-chakra uppercase font-bold text-center px-4 md:px-0">
         The first football RPG where every decision matters
         </span>
       </div>
@@ -16,7 +16,7 @@ export default function HomeSection() {
           Overgoal
         </h1>
       </div>
-      <div className="w-full h-[35vh] mt-0 grid grid-cols-5 z-90 font-chakra ">
+      <div className="w-full h-[25vh] md:h-[35vh] mt-0 grid grid-cols-5 z-90 font-chakra ">
         <div id="content" className="col-span-5 ">
           <div className="p-4 pt-2 ">
             <div
@@ -28,7 +28,7 @@ export default function HomeSection() {
                 alt="Overgoal"
                 width={800}
                 height={800}
-                className="object-contain absolute top-[15vh] md:top-8 w-[90vw] md:w-[800px] z-100 left-1/2  -translate-x-1/2"
+                className="object-contain absolute top-[12vh] md:top-8 w-[90vw] md:w-[800px] z-100 left-1/2  -translate-x-1/2"
               />
             </div>
           </div>

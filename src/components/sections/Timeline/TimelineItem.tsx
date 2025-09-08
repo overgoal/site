@@ -79,7 +79,7 @@ export default function TimelineItem({ item }: Props) {
       case "image-left":
         return (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center">
-            <div ref={imageRef} className="relative">
+            <div ref={imageRef} className="relative flex justify-center lg:justify-start">
               <Image
                 src={item.image}
                 alt={item.title}
@@ -90,7 +90,7 @@ export default function TimelineItem({ item }: Props) {
             </div>
             <div
               ref={contentRef}
-              className="flex flex-col justify-center ml-12 space-y-4"
+              className="flex flex-col justify-center text-center lg:text-left lg:ml-12 space-y-4"
             >
               <h3 className="text-xl md:text-2xl font-bold text-white">
                 {item.title}
@@ -107,7 +107,7 @@ export default function TimelineItem({ item }: Props) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center">
             <div
               ref={contentRef}
-              className="flex flex-col justify-center space-y-4 lg:order-1 order-2"
+              className="flex flex-col justify-center text-center lg:text-left space-y-4 lg:order-1 order-2"
             >
               <h3 className="text-xl md:text-2xl font-bold text-white">
                 {item.title}
@@ -116,7 +116,7 @@ export default function TimelineItem({ item }: Props) {
                 {item.description}
               </p>
             </div>
-            <div ref={imageRef} className="relative lg:order-2 order-1">
+            <div ref={imageRef} className="relative lg:order-2 order-1 flex justify-center lg:justify-end">
               <Image
                 src={"/tournam_tro.png"}
                 alt={item.title}

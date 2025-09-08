@@ -7,6 +7,8 @@ export const teamData = [
       "Launched El Super DT, Uruguay's 1st fantasy football game. CTO at Eyecue Insights, Co-founder at Lambda Class Game Studio. 2024 Dojo NY Residency participant.",
     socials: {
       twitter: "https://x.com/matigru93",
+      linkedin: "https://www.linkedin.com/in/mat%C3%ADas-grunwaldt-6407221a0/",
+      github: "https://github.com/mgrunwaldt",
     },
   },
   {
@@ -30,6 +32,7 @@ export const teamData = [
       "Shipped 30+ games as Exec Producer & Systems Designer. Ex–EA, Namco, Sony, Atari, Cryptic, Forte.io, ngmoco. Pioneer in freemium & blockchain game design. 2024 Dojo NY Residency participant.",
     socials: {
       twitter: "https://x.com/tulpalab_",
+      linkedin: "https://www.linkedin.com/in/johnalexmack/",
     },
   },
   {
@@ -40,6 +43,8 @@ export const teamData = [
       "2D Animator at Lambda Forge Studio. Ex–Lead 3D Artist at Lambda Studio. Versatile game artist: 2D, 3D, VFX & SFX. Mentored by top industry veterans.",
     socials: {
       twitter: "https://x.com/GerGahn",
+      linkedin: "https://www.linkedin.com/in/ger-gahn/",
+      artstation: "https://www.artstation.com/gergahn",
     },
   },
 ];

@@ -119,7 +119,7 @@ export default function FeaturesItem() {
       className="row-span-2 col-span-5  relative h-full transition-all duration-300"
     >
       <div className="w-full h-full  transition-all duration-300 overflow-hidden rounded-lg flex flex-col xl:flex-row items-center text-center justify-center max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-col  items-center justify-center gap-3  mr-0 xl:mr-8 flex-1">
+        <div className="flex flex-col md:flex-col  items-center justify-center gap-2 md:gap-3  mr-0 xl:mr-8 flex-1">
           {featuresData.map((feature, index) => (
             <div
               onClick={() => {
@@ -130,7 +130,7 @@ export default function FeaturesItem() {
               }}
               key={index}
               className={cn(
-                "cursor-pointer border border-white/10  box-shadow-lg  flex flex-col  items-center md:items-start justify-center  py-4 w-full gap-2 lg:gap-3 rounded-lg px-6"
+                "cursor-pointer border border-white/10  box-shadow-lg  flex flex-col  items-center md:items-start justify-center  py-3 md:py-4 w-full gap-2 lg:gap-3 rounded-lg px-6"
               )}
             >
               <span
