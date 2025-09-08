@@ -21,25 +21,37 @@ export default function HorizontalGallery() {
     )
       return;
 
-    // Animate title on scroll
-    gsap.fromTo(
-      titleRef.current,
-      {
-        opacity: 0,
-        y: 30,
-      },
-      {
+    // Check if user prefers reduced motion or is on mobile
+    const isMobile = window.innerWidth < 768;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (isMobile || prefersReducedMotion) {
+      // Just set visible state without animations on mobile
+      gsap.set(titleRef.current, {
         opacity: 1,
         y: 0,
-        duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: titleRef.current,
-          start: "top 80%",
-          toggleActions: "play none none reverse",
+      });
+    } else {
+      // Animate title on scroll (desktop only)
+      gsap.fromTo(
+        titleRef.current,
+        {
+          opacity: 0,
+          y: 30,
         },
-      }
-    );
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: titleRef.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    }
 
     // Create infinite horizontal scroll animation (desktop only)
     const createScrollAnimation = () => {

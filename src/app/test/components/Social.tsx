@@ -44,6 +44,19 @@ export default function Social() {
   useGSAP(() => {
     if (!containerRef.current || !titleRef.current) return;
 
+    // Check if user prefers reduced motion or is on mobile
+    const isMobile = window.innerWidth < 768;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (isMobile || prefersReducedMotion) {
+      // Just set visible state without animations on mobile
+      gsap.set(titleRef.current, {
+        opacity: 1,
+        y: 0,
+      });
+      return;
+    }
+
     // Animate title on scroll
     gsap.fromTo(
       titleRef.current,
