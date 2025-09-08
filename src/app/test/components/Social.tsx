@@ -124,6 +124,20 @@ function PhaseItem({ phase, index }: PhaseItemProps) {
   useGSAP(() => {
     if (!itemRef.current || !contentRef.current || !visualRef.current) return;
 
+    // Check if user prefers reduced motion or is on mobile
+    const isMobile = window.innerWidth < 768;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (isMobile || prefersReducedMotion) {
+      // Just set visible state without animations on mobile
+      gsap.set([contentRef.current, visualRef.current], {
+        opacity: 1,
+        x: 0,
+        y: 0,
+      });
+      return;
+    }
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: itemRef.current,

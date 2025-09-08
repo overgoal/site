@@ -41,8 +41,16 @@ export default function HorizontalGallery() {
       }
     );
 
-    // Create infinite horizontal scroll animation
+    // Create infinite horizontal scroll animation (desktop only)
     const createScrollAnimation = () => {
+      // Check if on mobile or user prefers reduced motion
+      const isMobile = window.innerWidth < 768;
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      
+      if (isMobile || prefersReducedMotion) {
+        return; // Skip animation on mobile
+      }
+
       const containerWidth = scrollContainerRef.current!.scrollWidth;
 
       // Duplicate items for seamless loop
@@ -52,7 +60,7 @@ export default function HorizontalGallery() {
       // Create the scroll animation
       const tween = gsap.to(scrollContainerRef.current, {
         x: -(containerWidth / 2), // Move by half the width (since we duplicated)
-        duration: totalItems * 2, // 3 seconds per item
+        duration: totalItems * 3, // Slower on desktop
         ease: "none",
         repeat: -1,
         paused: false,

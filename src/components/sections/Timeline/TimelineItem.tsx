@@ -34,6 +34,19 @@ export default function TimelineItem({ item }: Props) {
     )
       return;
 
+    // Check if user prefers reduced motion or is on mobile
+    const isMobile = window.innerWidth < 768;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (isMobile || prefersReducedMotion) {
+      // Just set visible state without animations on mobile
+      gsap.set([imageRef.current, contentRef.current, timelineRef.current], {
+        opacity: 1,
+        y: 0,
+      });
+      return;
+    }
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: itemRef.current,
@@ -137,7 +150,9 @@ export default function TimelineItem({ item }: Props) {
                 alt={item.title}
                 width={600}
                 height={600}
-                className=" object-cover rounded-lg"
+                className="object-cover rounded-lg w-full max-w-xs md:max-w-md"
+                loading="lazy"
+                sizes="(max-width: 768px) 320px, 600px"
               />
             </div>
             <div

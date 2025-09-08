@@ -65,6 +65,14 @@ export default function StatusSection() {
     () => {
       if (!statusSectionRef.current || !pinRef.current) return;
 
+      // Check if user prefers reduced motion or is on mobile
+      const isMobile = window.innerWidth < 768;
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      
+      if (isMobile || prefersReducedMotion) {
+        return; // Skip heavy ScrollTrigger setup on mobile
+      }
+
       // Set initial content state
       const updateContent = (index: number) => {
         const state = contentStates[index];

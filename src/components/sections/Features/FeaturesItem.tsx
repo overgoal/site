@@ -86,14 +86,22 @@ export default function FeaturesItem() {
     () => {
       if (!currentFeatureRef.current) return;
 
+      // Check if user prefers reduced motion or is on mobile
+      const isMobile = window.innerWidth < 768;
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      
+      if (isMobile || prefersReducedMotion) {
+        // Just set opacity without animations on mobile/reduced motion
+        gsap.set(currentFeatureRef.current, {
+          opacity: 1,
+        });
+        return;
+      }
+
       // Set initial states to prevent FOUC
       gsap.set(currentFeatureRef.current, {
         opacity: 1,
       });
-
-      // gsap.set(prevFeatureRef.current, {
-      //   opacity: 1,
-      // });
 
       // Function to cycle to next image with crossfade transition
       const cycleToNextImage = () => {
@@ -104,8 +112,8 @@ export default function FeaturesItem() {
         transitionToFeature(nextIndex);
       };
 
-      // Create interval for cycling through images
-      const interval = setInterval(cycleToNextImage, 5000);
+      // Create interval for cycling through images (longer on desktop)
+      const interval = setInterval(cycleToNextImage, 7000);
 
       // Cleanup function handled automatically by useGSAP
       return () => clearInterval(interval);

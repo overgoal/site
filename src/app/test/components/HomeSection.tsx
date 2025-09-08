@@ -29,6 +29,9 @@ export default function HomeSection() {
                 width={1000}
                 height={1000}
                 className="object-contain absolute top-[12vh] md:top-5 w-[90vw] md:w-[1000px] z-100 left-1/2  -translate-x-1/2"
+                priority
+                loading="eager"
+                sizes="(max-width: 768px) 90vw, 1000px"
               />
             </div>
           </div>
