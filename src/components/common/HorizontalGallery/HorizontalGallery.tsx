@@ -19,10 +19,11 @@ export default function HorizontalGallery() {
   const titleRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
   const [scrollTween, setScrollTween] = useState<gsap.core.Tween | null>(null);
+  const isMobile = useRef<boolean>(false);
 
-  const isMobile = window.innerWidth < 768;
 
   useGSAP(() => {
+    isMobile.current = window.innerWidth < 768;
     if (
       !containerRef.current ||
       !scrollContainerRef.current ||
@@ -122,6 +123,7 @@ export default function HorizontalGallery() {
 
   // Handle hover to pause/resume animation
   const handleMouseEnter = () => {
+    if(isMobile.current) return;
     if(isMobile) return;
     setIsHovered(true);
     if (scrollTween) {
@@ -130,7 +132,7 @@ export default function HorizontalGallery() {
   };
 
   const handleMouseLeave = () => {
-    if(isMobile) return;
+    if(isMobile.current) return;
     setIsHovered(false);
     // Only resume if the section is in viewport
     if (scrollTween && containerRef.current && ScrollTrigger.isInViewport(containerRef.current, 0.2)) {

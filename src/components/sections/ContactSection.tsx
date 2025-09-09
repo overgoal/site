@@ -2,7 +2,6 @@ import React from "react";
 import { CyberpunkContainer } from "@/components/cyberpunk-container";
 import { SOCIAL_LINKS } from "@/components/constants";
 import Link from "next/link";
-import Image from "next/image";
 import { TwitterIcon, GitHubIcon, DiscordIcon } from "@/components/icons/icons";
 
 const iconMap = {
