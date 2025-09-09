@@ -6,6 +6,7 @@ import HorizontalGallerySection from "./test/components/HorizontalGallerySection
 import GameSection from "./test/components/GameSection";
 import Social from "./test/components/Social";
 import TeamSection from "./test/components/TeamSection";
+import ContactSection from "./test/components/ContactSection";
 
 
 export default function page() {
@@ -18,6 +19,7 @@ export default function page() {
       <HorizontalGallerySection />
       <Social />
       <TeamSection />
+      <ContactSection />
     </>
   );
 }

@@ -16,3 +16,21 @@ export const NAV_LINKS = [
         href: '/mission',
     },
 ]
+
+export const SOCIAL_LINKS = [
+    {
+        label: 'Twitter',
+        href: 'https://x.com/overgoalgg',
+        icon: 'TwitterIcon',
+    },
+    {
+        label: 'Discord',
+        href: 'https://discord.gg/SmCDU8CYht',
+        icon: 'DiscordIcon',
+    },
+    {
+        label: 'Github',
+        href: 'https://github.com/overgoal',
+        icon: 'GitHubIcon',
+    },
+]
