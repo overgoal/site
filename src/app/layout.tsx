@@ -3,6 +3,7 @@ import { Chakra_Petch, Orbitron } from "next/font/google";
 import "./globals.css";
 import ShaderBackground from "@/components/shader-background";
 import localFont from "next/font/local";
+import Layout from "./index";
 
 const chakra = Chakra_Petch({
   variable: "--font-chakra",
@@ -48,7 +49,9 @@ export default function RootLayout({
       <body
         className={`${chakra.variable} ${orbitron.variable} ${airStrike.variable} ${airStrikeBold.variable} antialiased`}
       >
-        <ShaderBackground>{children}</ShaderBackground>
+        <ShaderBackground>
+          <Layout>{children}</Layout>
+        </ShaderBackground>
       </body>
     </html>
   );
