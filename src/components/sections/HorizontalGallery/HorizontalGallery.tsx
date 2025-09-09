@@ -5,6 +5,13 @@ import HorizontalGalleryItem from "./HorizontalGalleryItem";
 import { galleryData } from "./data";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
+
+const duplicatedData = [...galleryData, ...galleryData];
+
 
 export default function HorizontalGallery() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -18,80 +25,98 @@ export default function HorizontalGallery() {
       !containerRef.current ||
       !scrollContainerRef.current ||
       !titleRef.current
-    )
+    ) {
       return;
-
-    // Check if user prefers reduced motion or is on mobile
-    const isMobile = window.innerWidth < 768;
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    
-    if (isMobile || prefersReducedMotion) {
-      // Just set visible state without animations on mobile
-      gsap.set(titleRef.current, {
-        opacity: 1,
-        y: 0,
-      });
-    } else {
-      // Animate title on scroll (desktop only)
-      gsap.fromTo(
-        titleRef.current,
-        {
-          opacity: 0,
-          y: 30,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: titleRef.current,
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
     }
 
-    // Create infinite horizontal scroll animation (desktop only)
-    const createScrollAnimation = () => {
-      // Check if on mobile or user prefers reduced motion
-      const isMobile = window.innerWidth < 768;
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      
-      if (isMobile || prefersReducedMotion) {
-        return; // Skip animation on mobile
+    // Animate title on scroll
+    gsap.fromTo(
+      titleRef.current,
+      {
+        opacity: 0,
+        y: 30,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
       }
+    );
 
+    // Create infinite horizontal scroll animation only when section is in viewport
+    const createScrollAnimation = () => {
       const containerWidth = scrollContainerRef.current!.scrollWidth;
-
-      // Duplicate items for seamless loop
       const items = gsap.utils.toArray(".gallery-item");
       const totalItems = items.length;
 
-      // Create the scroll animation
+      // Create the scroll animation (initially paused)
       const tween = gsap.to(scrollContainerRef.current, {
         x: -(containerWidth / 2), // Move by half the width (since we duplicated)
         duration: totalItems * 3, // Slower on desktop
         ease: "none",
         repeat: -1,
-        paused: false,
+        paused: true, // Start paused
       });
 
       setScrollTween(tween);
       return tween;
     };
 
-    // Create animation after a short delay to ensure DOM is ready
-    const timer = setTimeout(createScrollAnimation, 100);
+    // Set up ScrollTrigger to control animation based on viewport
+    const scrollTrigger = ScrollTrigger.create({
+      trigger: containerRef.current,
+      start: "top 80%", // Start when section is 80% from top of viewport
+      end: "bottom 20%", // End when section is 20% from bottom of viewport
+      onEnter: () => {
+        // Section enters viewport - start animation
+        if (!scrollTween) {
+          const timer = setTimeout(() => {
+            const tween = createScrollAnimation();
+            if (tween && !isHovered) {
+              tween.play();
+            }
+          }, 100);
+          return () => clearTimeout(timer);
+        } else if (!isHovered) {
+          scrollTween.play();
+        }
+      },
+      onLeave: () => {
+        // Section leaves viewport - pause animation
+        if (scrollTween) {
+          scrollTween.pause();
+        }
+      },
+      onEnterBack: () => {
+        // Section re-enters viewport from below - resume animation
+        if (scrollTween && !isHovered) {
+          scrollTween.play();
+        }
+      },
+      onLeaveBack: () => {
+        // Section leaves viewport from top - pause animation
+        if (scrollTween) {
+          scrollTween.pause();
+        }
+      },
+    });
 
     return () => {
-      clearTimeout(timer);
+      // Cleanup
+      if (scrollTrigger) {
+        scrollTrigger.kill();
+      }
       if (scrollTween) {
         scrollTween.kill();
       }
     };
-  }, []);
+  }, [isHovered]); // Include isHovered in dependencies
 
   // Handle hover to pause/resume animation
   const handleMouseEnter = () => {
@@ -103,13 +128,13 @@ export default function HorizontalGallery() {
 
   const handleMouseLeave = () => {
     setIsHovered(false);
-    if (scrollTween) {
-      scrollTween.resume();
+    // Only resume if the section is in viewport
+    if (scrollTween && containerRef.current && ScrollTrigger.isInViewport(containerRef.current, 0.2)) {
+      scrollTween.play();
     }
   };
 
   // Duplicate items for seamless infinite scroll
-  const duplicatedData = [...galleryData, ...galleryData];
 
   return (
     <section
