@@ -22,14 +22,14 @@ export default function Timeline() {
     const isMobile = window.innerWidth < 768;
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     
-    // if (isMobile || prefersReducedMotion) {
-    //   // Just set visible state without animations on mobile
-    //   gsap.set(titleRef.current, {
-    //     opacity: 1,
-    //     y: 0,
-    //   });
-    //   return;
-    // }
+    if (isMobile || prefersReducedMotion) {
+      // Just set visible state without animations on mobile
+      gsap.set(titleRef.current, {
+        opacity: 1,
+        y: 0,
+      });
+      return;
+    }
 
     // Animate title on scroll
     gsap.fromTo(

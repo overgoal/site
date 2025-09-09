@@ -20,6 +20,8 @@ export default function HorizontalGallery() {
   const [isHovered, setIsHovered] = useState(false);
   const [scrollTween, setScrollTween] = useState<gsap.core.Tween | null>(null);
 
+  const isMobile = window.innerWidth < 768;
+
   useGSAP(() => {
     if (
       !containerRef.current ||
@@ -120,6 +122,7 @@ export default function HorizontalGallery() {
 
   // Handle hover to pause/resume animation
   const handleMouseEnter = () => {
+    if(isMobile) return;
     setIsHovered(true);
     if (scrollTween) {
       scrollTween.pause();
@@ -127,6 +130,7 @@ export default function HorizontalGallery() {
   };
 
   const handleMouseLeave = () => {
+    if(isMobile) return;
     setIsHovered(false);
     // Only resume if the section is in viewport
     if (scrollTween && containerRef.current && ScrollTrigger.isInViewport(containerRef.current, 0.2)) {
@@ -194,7 +198,7 @@ export default function HorizontalGallery() {
               isHovered ? "opacity-100" : "opacity-0"
             }`}
           >
-            <div className="flex items-center space-x-2 text-white text-sm">
+            <div className="hidden md:flex items-center space-x-2 text-white text-sm">
               <span className="font-chakra">Paused</span>
             </div>
           </div>

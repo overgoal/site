@@ -124,6 +124,16 @@ function PhaseItem({ phase, index }: PhaseItemProps) {
   useGSAP(() => {
     if (!itemRef.current || !contentRef.current || !visualRef.current) return;
 
+    const isMobile = window.innerWidth < 768;
+    if(isMobile) {
+      gsap.set([contentRef.current, visualRef.current], {
+        opacity: 1,
+        x: 0,
+        y: 0,
+      });
+      return;
+    }
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: itemRef.current,
