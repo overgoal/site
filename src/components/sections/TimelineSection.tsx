@@ -1,4 +1,4 @@
-import Timeline from "@/components/sections/Timeline/Timeline";
+import Timeline from "@/components/common/Timeline/Timeline";
 
 export default function TimelineSection() {
   return <Timeline />;

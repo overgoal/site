@@ -108,7 +108,6 @@ export default function FeaturesItem() {
         const currentIndex = currentIndexRef.current;
         const nextIndex = (currentIndex + 1) % images.length;
 
-        console.log(currentIndex, nextIndex);
         transitionToFeature(nextIndex);
       };
 

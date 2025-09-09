@@ -15,14 +15,14 @@ export default function ShaderBackground({ children }: ShaderBackgroundProps) {
         colorFill="#00e9fa"
         // colorStroke='#A16EFF'
         shape="circle"
-        size={0.5}
+        size={0.2}
         // strokeWidth={1}
       />
 
-      <GrainGradient
-        className="absolute inset-0 w-full h-full opacity-20"
+      {/* <GrainGradient
+        className="absolute inset-0 w-full h-full opacity-30"
         colors={["#00e9fa", "#000", "#000"]}
-      />
+      /> */}
 
       {children}
     </div>
