@@ -46,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${chakra.variable} ${orbitron.variable} ${airStrike.variable} ${airStrikeBold.variable}  antialiased`}
+        className={`${chakra.variable} ${orbitron.variable} ${airStrike.variable} ${airStrikeBold.variable} antialiased`}
       >
         <ShaderBackground>{children}</ShaderBackground>
       </body>
