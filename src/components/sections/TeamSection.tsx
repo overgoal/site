@@ -1,6 +1,6 @@
 import React from "react";
-import { teamData } from "@/components/sections/Team/data";
-import TeamItem from "@/components/sections/Team/TeamItem";
+import { teamData } from "@/components/common/Team/data";
+import TeamItem from "@/components/common/Team/TeamItem";
 import { CyberpunkContainer } from "@/components/cyberpunk-container";
 
 export default function TeamSection() {

@@ -15,7 +15,7 @@ export default function ContactSection() {
   return (
     <CyberpunkContainer className="relative py-16 md:py-24 lg:py-32 flex flex-col gap-6 md:gap-8 lg:gap-12 justify-center items-center">
       {/* Background NPC Image - Hidden on mobile, visible on larger screens */}
-      <div className="hidden md:block  absolute top-0 -left-32 lg:-left-30 ">
+      {/* <div className="hidden md:block  absolute top-0 -left-32 lg:-left-30 ">
         <Image
           src="/Npc.png"
           alt="Contact background"
@@ -23,7 +23,7 @@ export default function ContactSection() {
           width={150}
           height={150}
         />
-      </div>
+      </div> */}
 
       {/* Content Container */}
       <div className="flex flex-col items-center justify-center gap-3 md:gap-4 px-4 md:px-8 lg:px-12">
