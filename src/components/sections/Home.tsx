@@ -116,7 +116,7 @@ export default function HomeSection() {
         ref={sectionRef}
         className="w-full h-full mt-2 grid grid-cols-5 z-90 font-chakra "
       >
-        <div id="content" className="col-span-5 ">
+        <div id="content" className="col-span-5  ">
           <div className="p-10 pt-2 ">
             <div
               id="overview"

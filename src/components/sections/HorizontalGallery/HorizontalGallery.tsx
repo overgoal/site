@@ -156,8 +156,8 @@ export default function HorizontalGallery() {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           > 
-            {duplicatedData.map((item) => (
-              <div key={`${item.id}`} className="gallery-item">
+            {duplicatedData.map((item, index) => (
+              <div key={`${item.id}-${index}`} className="gallery-item">
                 <HorizontalGalleryItem key={`${item.id}`} item={item}  />
               </div>
             ))}
