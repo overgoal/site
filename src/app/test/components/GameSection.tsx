@@ -83,7 +83,7 @@ export default function GameSection() {
             <div className="order-2 md:order-1">
               <CyberpunkContainer className="w-full h-full p-0 z-20   ">
                 <div className="w-full h-full flex flex-col items-center justify-center">
-                  <Link href="https://discord.gg/m79rRpzRbU" target="_blank">
+                  <Link href="https://discord.com/invite/9ZqzGMcP8h" target="_blank">
                     <Button className="px-16 py-6 cursor-pointer text-2xl! font-chakra text-black font-bold  transition-all duration-300 hover:scale-105 hover:shadow-2xl bg-[#0abee1]  border-1 border-black flex items-center gap-3">
                       {/* Discord icon placeholder - replace with actual Discord icon */}
                       <svg 
